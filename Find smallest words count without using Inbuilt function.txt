@@ -1,0 +1,55 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+          //var names = "Mahesh Sagar Rohit Rakesh Akash";
+
+    string names = "ravi Ash Sag Rohit Raakesh";
+
+
+      int currentcount=0,maxcount=0,firstCount=0;
+      string NameWithMostOccuranceChar="",CurrentName="";
+      
+      
+      for(int i=0;i<names.Length;i++)
+      {
+          char c=names[i];
+          
+          if(c==' ')
+          {
+                ++firstCount;
+              if(firstCount==1)
+              maxcount=currentcount;
+              
+              
+              if(currentcount<=maxcount)
+              {
+                  maxcount=currentcount;
+                  NameWithMostOccuranceChar=CurrentName;
+              }
+               currentcount=0;
+              CurrentName="";
+          }
+          else
+          {
+              CurrentName+=c;
+              currentcount++;
+          }
+          //
+          
+         
+     
+      }
+      
+    Console.WriteLine("The name with the most occurrences of 'a' is: "+NameWithMostOccuranceChar);
+       
+    }
+}
+
+    
+
