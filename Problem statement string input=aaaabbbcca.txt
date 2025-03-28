@@ -1,0 +1,38 @@
+//Problem statement string input="aaaabbbccaad"
+//output [("a",3),("b",3),("c",2),("a",2),("d",1)]
+
+using System;
+namespace HelloWorld
+{
+	public class Program
+	{
+		public static void Main(string[] args)
+		{
+			string str="aaaabbbccaad";
+			
+			int count = 0;
+			string output=string.Empty;
+			
+			
+			for(int i=0;i<str.Length;i++)
+			{
+			  
+			  if(i<str.Length-1 && str[i]==str[i+1])
+			  {
+			     count++ ;
+			  }
+			  else
+			  {
+			   
+			   output+= $"(\"{str[i]}\",{count})"+ (i < str.Length-1 ? "," :"");
+			   count = 1 ;
+			    
+			  }
+			 
+			}
+		
+		  Console.WriteLine($"[{output}]");
+
+		}
+	}
+}
